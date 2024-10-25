@@ -6,9 +6,9 @@ public record DadosVacina(
         String nomePopular,
         String nomeTecnico
 ) {
-//    public DadosVacina(VacinaModel vacina) {
-//        this (
-//                vacina.getNomePopular(), vacina.getNomeTecnico()
-//        );
-//    }
+    public DadosVacina(VacinaModel vacina) {
+      this (
+               vacina.getNomePopular(), vacina.getNomeTecnico()
+      );
+   }
 }
