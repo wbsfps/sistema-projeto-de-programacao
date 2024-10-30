@@ -1,7 +1,6 @@
 package br.com.GadoForte.projeto_GadoForte.domain.animal;
 
 import br.com.GadoForte.projeto_GadoForte.domain.interfaces.Desativar;
-import br.com.GadoForte.projeto_GadoForte.domain.usuario.Usuario;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -31,9 +30,6 @@ public class Animal implements Desativar {
     @Column(name = "data_nascimento")
     private LocalDate dataNascimento;
 
-    @Column(name = "id_usuario")
-    private Usuario usuario;
-
     @Column(name = "ativo")
     private Boolean ativo;
 
@@ -41,7 +37,7 @@ public class Animal implements Desativar {
         this.nome = dados.nome();
         this.raca = dados.raca();
         this.dataNascimento = dados.dataNascimento();
-        this.usuario = dados.usuarioModel();
+        this.ativo = true;
     }
 
     @Override

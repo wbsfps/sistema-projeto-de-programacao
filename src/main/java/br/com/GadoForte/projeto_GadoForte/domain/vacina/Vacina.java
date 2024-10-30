@@ -15,15 +15,18 @@ import lombok.NoArgsConstructor;
 public class Vacina {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "nome_popular")
+    @Column(name = "nome_popular", length = 100)
     private String nomePopular;
-    @Column(name = "nome_tecnico")
+    @Column(name = "nome_tecnico", length = 100)
     private String nomeTecnico;
-//    @Column(name = "restricoes")
-//    private String restric
+    @Column(name = "textoRestricoes", length = 500)
+    private String textoRestricoes;
 
     public Vacina(DadosVacina dados) {
+        this.nomePopular = dados.nomePopular();
+        this.nomeTecnico = dados.nomeTecnico();
+        this.textoRestricoes = dados.textoRestricoes();
     }
 }
