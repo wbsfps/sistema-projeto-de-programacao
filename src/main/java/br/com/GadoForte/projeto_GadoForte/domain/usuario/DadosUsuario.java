@@ -5,7 +5,7 @@ public record DadosUsuario (
         String senha
 ) {
 
-    public DadosUsuario (UsuarioModel dados) {
+    public DadosUsuario (Usuario dados) {
         this(dados.getLogin(), dados.getSenha());
     }
 }

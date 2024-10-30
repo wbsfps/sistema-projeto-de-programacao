@@ -1,6 +1,6 @@
 package br.com.GadoForte.projeto_GadoForte.domain.animal;
 
-import br.com.GadoForte.projeto_GadoForte.domain.usuario.UsuarioModel;
+import br.com.GadoForte.projeto_GadoForte.domain.usuario.Usuario;
 
 import java.time.LocalDate;
 
@@ -9,9 +9,9 @@ public record DadosAnimal(
         String nome,
         String raca,
         LocalDate dataNascimento,
-        UsuarioModel usuarioModel
+        Usuario usuarioModel
 ) {
-    public DadosAnimal(AnimalModel animal) {
+    public DadosAnimal(Animal animal) {
         this(animal.getId(), animal.getNome(), animal.getRaca(), animal.getDataNascimento(), animal.getUsuario());
     }
 }

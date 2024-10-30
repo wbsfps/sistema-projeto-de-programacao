@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
-public class UsuarioModel implements Desativar {
+public class Usuario implements Desativar  {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,7 +27,7 @@ public class UsuarioModel implements Desativar {
     @Column(name = "ativo")
     private Boolean ativo;
 
-    public UsuarioModel(DadosUsuario dados) {
+    public Usuario(DadosUsuario dados) {
         this.login = dados.login();
         this.senha = dados.senha();
         this.ativo = true;

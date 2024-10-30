@@ -1,7 +1,7 @@
 package br.com.GadoForte.projeto_GadoForte.domain.animal;
 
 import br.com.GadoForte.projeto_GadoForte.domain.interfaces.Desativar;
-import br.com.GadoForte.projeto_GadoForte.domain.usuario.UsuarioModel;
+import br.com.GadoForte.projeto_GadoForte.domain.usuario.Usuario;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -16,7 +16,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
-public class AnimalModel implements Desativar {
+public class Animal implements Desativar {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,17 +32,17 @@ public class AnimalModel implements Desativar {
     private LocalDate dataNascimento;
 
     @Column(name = "id_usuario")
-    private UsuarioModel usuario;
+    private Usuario usuario;
 
     @Column(name = "ativo")
     private Boolean ativo;
 
-//    public AnimalModel(DadosAnimal dados) {
-//        this.nome = dados.nome();
-//        this.raca = dados.raca();
-//        this.dataNascimento = dados.dataNascimento();
-//        this.usuario = dados.usuarioModel();
-//    }
+    public Animal(DadosAnimal dados) {
+        this.nome = dados.nome();
+        this.raca = dados.raca();
+        this.dataNascimento = dados.dataNascimento();
+        this.usuario = dados.usuarioModel();
+    }
 
     @Override
     public void desativar() {

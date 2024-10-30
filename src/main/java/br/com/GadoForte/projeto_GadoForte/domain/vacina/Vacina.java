@@ -6,16 +6,13 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
-import java.util.List;
-
 @Entity
 @Table(name = "vacinas")
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
-public class VacinaModel {
+public class Vacina {
 
     @Id
     @GeneratedValue
@@ -27,6 +24,6 @@ public class VacinaModel {
 //    @Column(name = "restricoes")
 //    private String restric
 
-    public VacinaModel(DadosVacina dados) {
+    public Vacina(DadosVacina dados) {
     }
 }
