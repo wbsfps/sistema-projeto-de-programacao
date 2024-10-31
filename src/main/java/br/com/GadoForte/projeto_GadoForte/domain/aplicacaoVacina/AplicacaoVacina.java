@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "aplicacao_vacina")
+@Table(name = "aplicacoes_vacinas")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -38,7 +38,7 @@ public class AplicacaoVacina {
     @Column(name = "data_aplicacao")
     private LocalDate dataAplicacao;
 
-    public AplicacaoVacina(DadosAplicacaoVacina dadosAplicacaoVacina, Vacina vacina, Animal animal, Usuario usuario) {
+    public AplicacaoVacina(AplicacaoVacinaRequestDTO dadosAplicacaoVacina, Vacina vacina, Animal animal, Usuario usuario) {
         this.dataAplicacao = dadosAplicacaoVacina.dataAplicacao();
         this.vacina = vacina;
         this.animal = animal;

@@ -1,14 +1,20 @@
 package br.com.GadoForte.projeto_GadoForte.domain.aplicacaoVacina;
 
+import jakarta.validation.constraints.NotNull;
+
 import java.time.LocalDate;
 
-public record DadosAplicacaoVacina(
+public record AplicacaoVacinaRequestDTO(
+        @NotNull
         Long idVacina,
+        @NotNull
         Long idAnimal,
+        @NotNull
         Long idUsuario,
+        @NotNull
         LocalDate dataAplicacao
 ) {
-    public DadosAplicacaoVacina(AplicacaoVacina aplicacaoVacina) {
+    public AplicacaoVacinaRequestDTO(AplicacaoVacina aplicacaoVacina) {
         this(
                 aplicacaoVacina.getVacina().getId(),
                 aplicacaoVacina.getAnimal().getId(),
