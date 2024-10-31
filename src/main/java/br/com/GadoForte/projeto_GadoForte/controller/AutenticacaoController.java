@@ -29,7 +29,10 @@ public class AutenticacaoController {
         var authenticationToken = new UsernamePasswordAuthenticationToken(dados.login(), dados.senha());
         var authentication = manager.authenticate(authenticationToken);
 
-        var tokenJwt = service.gerarToken((Usuario) authentication);
+        // Extraindo o usuário autenticado a partir do principal
+        var usuario = (Usuario) authentication.getPrincipal();
+
+        var tokenJwt = service.gerarToken(usuario);
         return ResponseEntity.ok(new DataTokenJWT(tokenJwt));
     }
 }

@@ -33,11 +33,17 @@ public class Animal implements Desativar {
     @Column(name = "ativo")
     private Boolean ativo;
 
-    public Animal(DadosAnimal dados) {
+    public Animal(AnimalRequestDTO dados) {
         this.nome = dados.nome();
         this.raca = dados.raca();
         this.dataNascimento = dados.dataNascimento();
         this.ativo = true;
+    }
+
+    public void atualizar(AnimalAlterarDados dados) {
+        if (dados.nome() != null) {
+            this.nome = dados.nome();
+        }
     }
 
     @Override
