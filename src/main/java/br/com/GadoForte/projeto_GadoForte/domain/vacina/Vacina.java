@@ -24,9 +24,16 @@ public class Vacina {
     @Column(name = "textoRestricoes", length = 500)
     private String textoRestricoes;
 
-    public Vacina(DadosVacina dados) {
+    public Vacina(VacinaRequestDTO dados) {
         this.nomePopular = dados.nomePopular();
         this.nomeTecnico = dados.nomeTecnico();
         this.textoRestricoes = dados.textoRestricoes();
     }
+
+    public void atualizar(VacinaAlterarDados vacinaDTO) {
+        if (vacinaDTO.textoRestricoes() != null) {
+            this.textoRestricoes = vacinaDTO.textoRestricoes();
+        }
+    }
+
 }

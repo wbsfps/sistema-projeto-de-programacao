@@ -24,7 +24,7 @@ public class AnimalController {
     }
 
     @GetMapping
-    public ResponseEntity<Page<AnimalResponseDTO>> animals(@PageableDefault(size = 5 ) Pageable pageable) {
+    public ResponseEntity<Page<AnimalResponseDTO>> todosOsAnimais(@PageableDefault(size = 5 ) Pageable pageable) {
         var animais = repository.findAllByAtivoTrue(pageable).map(AnimalResponseDTO::new);
         return ResponseEntity.ok(animais);
     }
